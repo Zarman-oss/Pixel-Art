@@ -41,9 +41,11 @@ export default function ChatPage() {
 
   async function handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    event.persist;
+
     const form = event.target as HTMLFormElement;
+
     const prompt = form.prompt.value;
+
     setMessages((prev) => [
       ...prev,
       {
@@ -54,7 +56,32 @@ export default function ChatPage() {
     setIsGenerating(true);
     setError('');
 
-    //api call to model
+    // Use array reverse to get the last image, as findLast may not be supported
+    const lastImage = [...messages]
+      .reverse()
+      .find((message) => message.image)?.image;
+
+    try {
+      const response = await fetch('/api/predictions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt, image: lastImage }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate image');
+      }
+
+      const prediction = await response.json();
+      setMessages((prev) => [...prev, { image: prediction.image }]);
+      setIsGenerating(false);
+      form.reset();
+    } catch (error) {
+      setError((error as Error).message);
+      setIsGenerating(false);
+    }
   }
 
   return (

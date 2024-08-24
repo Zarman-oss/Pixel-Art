@@ -1,20 +1,20 @@
 export const testImages = [
   {
-    title: "Sunset Over the Mountains",
+    title: 'The Son of Man (Magritte)',
     image:
-      "https://via.placeholder.com/400x300.png?text=Sunset+Over+the+Mountains",
-    prompt: "A breathtaking sunset casting golden hues over a mountain range.",
+      'https://user-images.githubusercontent.com/2289/215219780-cb4a0cdb-6fea-46fe-ae22-12d68e5ba79f.jpg',
+    prompt: 'make his jacket out of leather',
   },
   {
-    title: "Futuristic Cityscape",
-    image: "https://via.placeholder.com/400x300.png?text=Futuristic+Cityscape",
-    prompt:
-      "A bustling futuristic city with towering skyscrapers and flying cars.",
+    title: 'Picture of Eiffle Tower',
+    image:
+      'https://user-images.githubusercontent.com/2289/215248577-bdf7c342-e65c-4b11-bc53-cdb2c0c52d8b.jpg',
+    prompt: 'add fireworks to the sky',
   },
   {
-    title: "Serene Forest Path",
-    image: "https://via.placeholder.com/400x300.png?text=Serene+Forest+Path",
-    prompt:
-      "A peaceful, lush green forest with a winding path and rays of sunlight filtering through the trees.",
+    title: 'Sunflowers (van Gogh)',
+    image:
+      'https://user-images.githubusercontent.com/2289/215248708-80787623-fff4-4b22-a548-e5c46b055244.png',
+    prompt: 'swap sunflowers with roses',
   },
 ];

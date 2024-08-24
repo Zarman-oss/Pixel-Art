@@ -1,5 +1,3 @@
-'use client';
-
 import Message from '@/components/Message';
 import { Button } from '@/components/ui/button';
 import { ExternalLinkIcon, RefreshCcwIcon } from 'lucide-react';
